@@ -1,10 +1,12 @@
 const canvas = document.getElementById('main-canvas')
 const ctx = canvas.getContext('2d')
 
+const SPEED = 14
 const TILE_COUNT = 20
-const SPEED = 7
-const HEAD_X = canvas.width / 2
-const HEAD_Y = canvas.width / 2
+let HEAD_X = canvas.width / 2
+let HEAD_Y = canvas.width / 2
+let AXIS_X = 0
+let AXIS_Y = 0
 
 function drawGameBoard() {
   const FIRST_BOARD_COLOR = '#2c2c54'
@@ -30,6 +32,7 @@ function drawGameBoard() {
 function drawGame() {
   console.log('Game Loop')
   drawGameBoard()
+  changeSnakePosition()
   drawSnake()
   setTimeout(drawGame, 1000 / SPEED)
 }
@@ -40,3 +43,27 @@ function drawSnake() {
   ctx.fillStyle = 'green'
   ctx.fillRect(HEAD_X, HEAD_Y, 20, 20)
 }
+
+function changeSnakePosition() {
+  HEAD_X += AXIS_X
+  HEAD_Y += AXIS_Y
+}
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.code === 'KeyW' || event.code === 'ArrowUp') {
+    AXIS_Y = -20
+    AXIS_X = 0
+  }
+  if (event.code === 'KeyS' || event.code === 'ArrowDown') {
+    AXIS_Y = +20
+    AXIS_X = 0
+  }
+  if (event.code === 'KeyA' || event.code === 'ArrowLeft') {
+    AXIS_Y = 0
+    AXIS_X = -20
+  }
+  if (event.code === 'KeyD' || event.code === 'ArrowRight') {
+    AXIS_Y = 0
+    AXIS_X = +20
+  }
+})
