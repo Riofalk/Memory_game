@@ -8,8 +8,8 @@ let HEAD_X = canvas.width / 2
 let HEAD_Y = canvas.width / 2
 let AXIS_X = 0
 let AXIS_Y = 0
-const FOOD_X = canvas.width / 4
-const FOOD_Y = canvas.width / 4
+let FOOD_X = canvas.width / 4
+let FOOD_Y = canvas.width / 4
 
 function drawGameBoard() {
   const FIRST_BOARD_COLOR = '#2c2c54'
@@ -36,6 +36,7 @@ function drawGame() {
   console.log('Game Loop')
   drawGameBoard()
   changeSnakePosition()
+  didSnakeAte()
   drawFood()
   drawSnake()
   setTimeout(drawGame, 1000 / SPEED)
@@ -51,6 +52,17 @@ function drawSnake() {
 function drawFood() {
   ctx.fillStyle = 'red'
   ctx.fillRect(FOOD_X, FOOD_Y, TILE_SIZE, TILE_SIZE)
+}
+
+function didSnakeAte() {
+  const random = Math.random() * canvas.width
+  if ((HEAD_X === FOOD_X) & (HEAD_Y === FOOD_Y)) {
+    FOOD_X = random - (random % TILE_SIZE)
+    console.log(FOOD_X)
+    FOOD_Y = random - (random % TILE_SIZE)
+    console.log(FOOD_Y)
+    console.log(HEAD_X, HEAD_Y)
+  }
 }
 
 function changeSnakePosition() {
