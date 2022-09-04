@@ -2,6 +2,9 @@ const canvas = document.getElementById('main-canvas')
 const ctx = canvas.getContext('2d')
 
 const TILE_COUNT = 20
+const SPEED = 7
+const HEAD_X = canvas.width / 2
+const HEAD_Y = canvas.width / 2
 
 function drawGameBoard() {
   const FIRST_BOARD_COLOR = '#2c2c54'
@@ -25,3 +28,10 @@ function drawGameBoard() {
 }
 
 drawGameBoard()
+
+function drawSnake() {
+  ctx.fillStyle = 'green'
+  ctx.fillRect(HEAD_X, HEAD_Y, 20, 20)
+}
+
+drawSnake()
