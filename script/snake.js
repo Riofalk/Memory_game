@@ -19,6 +19,7 @@ let FOOD_X = canvas.width / 4
 let FOOD_Y = canvas.width / 4
 const SNAKE_PARTS = []
 let tailLength = 2
+let score = 0
 
 function drawGameBoard() {
   const FIRST_BOARD_COLOR = '#2c2c54'
@@ -48,10 +49,17 @@ function drawGame() {
   didSnakeAte()
   drawFood()
   drawSnake()
+  drawScore()
   setTimeout(drawGame, 1000 / SPEED)
 }
 
 drawGame()
+
+function drawScore() {
+  ctx.fillStyle = '#fff'
+  ctx.font = '12px Verdana'
+  ctx.fillText('Score: ' + score, 338, 14)
+}
 
 function drawSnake() {
   ctx.fillStyle = '#90ee90'
@@ -85,6 +93,7 @@ function didSnakeAte() {
     console.log(FOOD_Y)
     console.log(HEAD_X, HEAD_Y)
     tailLength++
+    score++
   }
 }
 
