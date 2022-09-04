@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(75, 72, 70, 0.788);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  // align-content: center;
+  align-items: center;
+}
+
+#main-canvas {
+  color: #fff;
+  font-size: 30px;
+  // position: absolute;
+  // box-sizing: padding-box;
+  // background-color: #000;
+  // width: 400;
+  // height: 400;
+  // border: 1px solid red;
+  outline: rgb(7, 214, 93) 3px solid;
+}
