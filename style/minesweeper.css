@@ -1,0 +1,55 @@
+* {
+    font-family: 'IBM Plex Serif', serif;
+    margin: 0;
+
+}
+
+h1 {
+    height: 10vh;
+    background-color: blue;
+    width: 100%;
+    text-align: center;
+    font-size: 6vh;
+}
+
+.game-stats {
+    height: 10vh;
+    width: 100%;
+    margin-bottom: 2vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.bomb-count,
+.timer,
+.red-flag-count {
+    font-size: 6vh;  
+}
+
+#game-board {
+    margin: auto;
+    border: 1px solid black;
+    background-color: aqua;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#game-board > div {
+    border: solid black 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    width: 43px;
+    height: 43px;
+    background-color: red;
+    cursor: pointer;
+}
+
+#game-board > div:hover {
+    background-color: brown;
+}
