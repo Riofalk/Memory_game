@@ -51,18 +51,22 @@ function changeSnakePosition() {
 
 document.body.addEventListener('keydown', (event) => {
   if (event.code === 'KeyW' || event.code === 'ArrowUp') {
+    if (AXIS_Y == 20) return
     AXIS_Y = -20
     AXIS_X = 0
   }
   if (event.code === 'KeyS' || event.code === 'ArrowDown') {
+    if (AXIS_Y == -20) return
     AXIS_Y = +20
     AXIS_X = 0
   }
   if (event.code === 'KeyA' || event.code === 'ArrowLeft') {
+    if (AXIS_X == 20) return
     AXIS_Y = 0
     AXIS_X = -20
   }
   if (event.code === 'KeyD' || event.code === 'ArrowRight') {
+    if (AXIS_X == -20) return
     AXIS_Y = 0
     AXIS_X = +20
   }
