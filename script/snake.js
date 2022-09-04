@@ -27,11 +27,16 @@ function drawGameBoard() {
   }
 }
 
-drawGameBoard()
+function drawGame() {
+  console.log('Game Loop')
+  drawGameBoard()
+  drawSnake()
+  setTimeout(drawGame, 1000 / SPEED)
+}
+
+drawGame()
 
 function drawSnake() {
   ctx.fillStyle = 'green'
   ctx.fillRect(HEAD_X, HEAD_Y, 20, 20)
 }
-
-drawSnake()
