@@ -3,10 +3,13 @@ const ctx = canvas.getContext('2d')
 
 const SPEED = 14
 const TILE_COUNT = 20
+const TILE_SIZE = 20
 let HEAD_X = canvas.width / 2
 let HEAD_Y = canvas.width / 2
 let AXIS_X = 0
 let AXIS_Y = 0
+const FOOD_X = canvas.width / 4
+const FOOD_Y = canvas.width / 4
 
 function drawGameBoard() {
   const FIRST_BOARD_COLOR = '#2c2c54'
@@ -33,6 +36,7 @@ function drawGame() {
   console.log('Game Loop')
   drawGameBoard()
   changeSnakePosition()
+  drawFood()
   drawSnake()
   setTimeout(drawGame, 1000 / SPEED)
 }
@@ -41,7 +45,12 @@ drawGame()
 
 function drawSnake() {
   ctx.fillStyle = 'green'
-  ctx.fillRect(HEAD_X, HEAD_Y, 20, 20)
+  ctx.fillRect(HEAD_X, HEAD_Y, TILE_SIZE, TILE_SIZE)
+}
+
+function drawFood() {
+  ctx.fillStyle = 'red'
+  ctx.fillRect(FOOD_X, FOOD_Y, TILE_SIZE, TILE_SIZE)
 }
 
 function changeSnakePosition() {
