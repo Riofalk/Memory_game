@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
 /* GENERAL */
 * {
@@ -9,8 +9,8 @@
 
 body,
 html {
-  font-family: "Ubuntu", sans-serif;
-  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  height: 100vh;
 }
 
 main {
@@ -78,6 +78,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: auto;
 }
 
 footer p {
