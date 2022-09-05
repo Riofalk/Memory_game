@@ -45,7 +45,7 @@ function drawGameBoard() {
 }
 
 function drawGame() {
-  console.log('Game Loop')
+  // console.log('Game Loop')
 
   snakeHeadLocation()
   let result = endGame()
@@ -59,7 +59,7 @@ function drawGame() {
   if (score > 3) {
     SPEED = 30
   }
-  console.log(SPEED)
+  // console.log(SPEED)
   drawGameBoard()
   didSnakeAte()
   drawFood()
@@ -112,9 +112,7 @@ function drawSnake() {
   ctx.fillStyle = '#90ee90'
   for (let i = 0; i < SNAKE_PARTS.length; i++) {
     let tail = SNAKE_PARTS[i]
-
     ctx.fillRect(tail.x, tail.y, TILE_SIZE, TILE_SIZE)
-    console.log(SNAKE_PARTS)
   }
   SNAKE_PARTS.push(new SnakePart(HEAD_X, HEAD_Y))
   if (SNAKE_PARTS.length > tailLength) {
@@ -135,10 +133,7 @@ function didSnakeAte() {
   const random = Math.random() * canvas.width
   if ((HEAD_X === FOOD_X) & (HEAD_Y === FOOD_Y)) {
     FOOD_X = random - (random % TILE_SIZE)
-    console.log(FOOD_X)
     FOOD_Y = random - (random % TILE_SIZE)
-    console.log(FOOD_Y)
-    console.log(HEAD_X, HEAD_Y)
     tailLength++
     score++
     moreSound.play()
@@ -172,3 +167,10 @@ document.body.addEventListener('keydown', (event) => {
     AXIS_X = +20
   }
 })
+
+const gameStartButton = document.getElementById('game-start-button')
+gameStartButton.onclick = function () {
+  if (AXIS_Y == 20) return
+  AXIS_Y = -20
+  AXIS_X = 0
+}

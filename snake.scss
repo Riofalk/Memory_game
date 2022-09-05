@@ -81,6 +81,10 @@ body {
     &:active {
       transform: translateY(10px);
     }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
   }
 
   .btn-start {
