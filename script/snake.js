@@ -44,13 +44,39 @@ function drawGameBoard() {
 
 function drawGame() {
   console.log('Game Loop')
+
+  snakeHeadLocation()
+  let result = endGame()
+  if (result) {
+    return
+  }
+
   drawGameBoard()
-  changeSnakePosition()
   didSnakeAte()
   drawFood()
   drawSnake()
   drawScore()
   setTimeout(drawGame, 1000 / SPEED)
+}
+
+function endGame() {
+  let gameOver = false
+
+  if (
+    HEAD_X < 0 ||
+    HEAD_X >= canvas.width ||
+    HEAD_Y < 0 ||
+    HEAD_Y >= canvas.height
+  ) {
+    gameOver = true
+  }
+
+  if (gameOver) {
+    ctx.fillStyle = '#FFF'
+    ctx.font = '60px Verdana'
+    ctx.fillText('Game Over!', 20, canvas.height / 2)
+  }
+  return gameOver
 }
 
 drawGame()
@@ -64,9 +90,9 @@ function drawScore() {
 function drawSnake() {
   ctx.fillStyle = '#90ee90'
   for (let i = 0; i < SNAKE_PARTS.length; i++) {
-    let part = SNAKE_PARTS[i]
+    let tail = SNAKE_PARTS[i]
 
-    ctx.fillRect(part.x, part.y, TILE_SIZE, TILE_SIZE)
+    ctx.fillRect(tail.x, tail.y, TILE_SIZE, TILE_SIZE)
     console.log(SNAKE_PARTS)
   }
   SNAKE_PARTS.push(new SnakePart(HEAD_X, HEAD_Y))
@@ -97,7 +123,7 @@ function didSnakeAte() {
   }
 }
 
-function changeSnakePosition() {
+function snakeHeadLocation() {
   HEAD_X += AXIS_X
   HEAD_Y += AXIS_Y
 }
