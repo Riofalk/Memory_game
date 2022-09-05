@@ -38,11 +38,27 @@ h1 {
     flex-wrap: wrap;
 }
 
+#game-start {
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    color: lightblue;
+    font-size: 30px;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    margin: auto;
+    transition: 0.5s;
+    font-weight: 400;
+}
+
+#game-start:hover {
+    scale: 1.1;
+    box-shadow: 10px 5px 5px black;
+}
+
 #game-board > div {
     border: solid black 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 30px;
     width: 43px;
     height: 43px;

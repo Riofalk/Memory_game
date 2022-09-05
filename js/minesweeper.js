@@ -7,7 +7,8 @@ let boardSize = 10,
     time = 1,
     gameOver = false,
     timerUpd = null,
-    board = document.querySelector('#game-board');
+    board = document.querySelector('#game-board'),
+    startGameBtn = document.querySelector('#game-start');
 
 
 
@@ -47,7 +48,6 @@ function setMines(id) {
         let rnd = Math.floor(Math.random() * boardSize ** 2);
         if (tiles[rnd].bomb || rnd == id) i--;
         else tiles[rnd].bomb = true;
-        console.log('Hello');
     }
 }
 
@@ -61,11 +61,18 @@ function creatBoard() {
         tiles.push({tile,clicked : false, bomb : false, redFlag : false})
         tile.style.display = 'none';
     }
+
 }
 
 function startGame() {
     for (let { tile } of tiles) {
         tile.style.display = 'initial';
+    }
+}
+
+function gameFinishes() {
+    for (let { tile } of tiles) {
+        tile.style.display = 'none';
     }
 }
 
@@ -165,9 +172,10 @@ board.addEventListener('contextmenu', function(event) {
 
 
 board.onclick = element => {
-    
+
+    if (element.target.id != 'game-start') return;
+
     let id = element.target.id;
-    let  { tile }  = tiles[id]
     let tileAtributes = tiles[id]
 
     if(!gameStarted) {
