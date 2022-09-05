@@ -174,3 +174,8 @@ gameStartButton.onclick = function () {
   AXIS_Y = -20
   AXIS_X = 0
 }
+
+const gameRestartButton = document.getElementById('game-restart-button')
+gameRestartButton.onclick = function () {
+  location.reload()
+}
