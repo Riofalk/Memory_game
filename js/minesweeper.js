@@ -9,6 +9,8 @@ let boardSize = 10,
     timerUpd = null,
     board = document.querySelector('#game-board');
 
+
+
 let bombCountUpd = document.querySelector('.bomb-count')
     bombCountUpd.innerHTML = (`💣 ${bombCount}`);
 
@@ -22,6 +24,7 @@ let difficulty = {
     medium : Math.floor(boardSize * boardSize * 0,25),
     hard : Math.floor(boardSize * boardSize * 0,3)
 }
+
 
 function timerStart() {
     timerUpd = setInterval(function() {
@@ -48,6 +51,7 @@ function setMines(id) {
     }
 }
 
+
 function creatBoard() {
     let tile;
     for (let id = 0 ; id < boardSize ** 2; id++) {
@@ -55,6 +59,13 @@ function creatBoard() {
         tile.setAttribute('id', id)
         board.appendChild(tile)
         tiles.push({tile,clicked : false, bomb : false, redFlag : false})
+        tile.style.display = 'none';
+    }
+}
+
+function startGame() {
+    for (let { tile } of tiles) {
+        tile.style.display = 'initial';
     }
 }
 
@@ -101,8 +112,6 @@ function nearbyTiles(id) {
         else if (!tiles[id + 10].clicked) nearbyTilesArr.push(id + 10)
     }
 
-
-    console.log('Hello');
         
     if (bombCountAround == 0) {
         nearbyTilesArr.forEach (element => {
@@ -144,7 +153,6 @@ function bombClick() {
 
 window.addEventListener('DOMContentLoaded', () => {
     creatBoard();
-
 })
 
 
@@ -184,6 +192,8 @@ board.onclick = element => {
         h1Dom.innerHTML = 'Winner-winner, chicken dinner';
     }
 } 
+
+
 
 
 
