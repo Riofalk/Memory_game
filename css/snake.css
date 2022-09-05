@@ -7,6 +7,10 @@
 
 body {
   background-color: #ced6e0;
+  height: 100vh;
+}
+
+.snake-main {
   display: flex;
   justify-content: center;
   flex-direction: column;
