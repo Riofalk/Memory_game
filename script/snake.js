@@ -62,6 +62,7 @@ function drawGame() {
   drawFood()
   drawSnake()
   drawScore()
+  drawSpeed()
   setTimeout(drawGame, 1000 / SPEED)
 }
 
@@ -103,6 +104,18 @@ function drawScore() {
   ctx.fillStyle = '#fff'
   ctx.font = '12px Verdana'
   ctx.fillText('Score: ' + score, 338, 14)
+}
+
+function drawSpeed() {
+  ctx.fillStyle = '#fff'
+  ctx.font = '12px Verdana'
+  if (SPEED === 8) {
+    ctx.fillText('Speed: 1', 268, 14)
+  } else if (SPEED === 12) {
+    ctx.fillText('Speed: 2', 268, 14)
+  } else if (SPEED >= 22) {
+    ctx.fillText('Speed: 9000', 250, 14)
+  }
 }
 
 function drawSnake() {
