@@ -122,7 +122,7 @@ function drawSnake() {
   ctx.fillStyle = '#90ee90'
   for (let i = 0; i < SNAKE_PARTS.length; i++) {
     let tail = SNAKE_PARTS[i]
-    ctx.fillRect(tail.x + 2, tail.y + 2, TILE_SIZE - 4, TILE_SIZE - 4)
+    ctx.fillRect(tail.x + 1, tail.y + 1, TILE_SIZE - 2, TILE_SIZE - 2)
   }
   SNAKE_PARTS.push(new SnakePart(HEAD_X, HEAD_Y))
   if (SNAKE_PARTS.length > tailLength) {
