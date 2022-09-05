@@ -17,28 +17,13 @@ let bombCountUpd = document.querySelector('.bomb-count')
     bombCountUpd.innerHTML = (`☀️ ${bombCount}`);
 
 let redFlagUpd = document.querySelector('.red-flag-count')
-    redFlagUpd.innerHTML = (`☁️ ${flagCount}`);
+    redFlagUpd.innerHTML = (`🌧️ ${flagCount}`);
 
 let timer = document.querySelector('.timer')
 
 function varUpd() {
 
 }
-
-async function hideTiles() {
-    for (let {tile} of tiles) {
-        tile.style.visibility = 'hidden';
-        await new Promise(r => setTimeout(r, 50));
-    }
-    //setTimeout(deleteTiles(), 5000)
-
-}
-
-function deleteTiles() {
-    for(let {tile} of tiles) tile.remove()
-
-}
-
 
 
 function timerStart() {
@@ -127,7 +112,7 @@ function nearbyTiles(id) {
                 nearbyTiles(element);
             }
         })
-        if (tiles[id].tile.innerHTML == '☁️') redFlag(id);
+        if (tiles[id].tile.innerHTML == '🌧️') redFlag(id);
     } else {
         tiles[id].tile.innerHTML = bombCountAround;
         tiles[id].tile.setAttribute('class', 'clicked');
@@ -139,14 +124,14 @@ function redFlag(id) {
     let {tile} = tiles[id];
     if(!tiles[id].redFlag) {
         tiles[id].redFlag = true;
-        tile.innerHTML = "☁️";
+        tile.innerHTML = "🌧️";
         flagCount--;
     } else {
         tile.innerHTML = "";
         tiles[id].redFlag = false;
         flagCount++;
     }
-    redFlagUpd.innerHTML = (`☁️ ${flagCount}`);
+    redFlagUpd.innerHTML = (`🌧️ ${flagCount}`);
     flagCount < 0 ? redFlagUpd.style.color = 'red' : redFlagUpd.style.color = 'black';
 }
 
@@ -156,8 +141,6 @@ async function bombClick() {
     })
     gameOver = true;
     clearTimeout(timerUpd);
-    setTimeout(() => { hideTiles() }, 5000);
-
 }
 
 
