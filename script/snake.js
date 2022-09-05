@@ -62,6 +62,10 @@ function drawGame() {
 function endGame() {
   let gameOver = false
 
+  if (AXIS_X === 0 && AXIS_Y === 0) {
+    return false
+  }
+
   if (
     HEAD_X < 0 ||
     HEAD_X >= canvas.width ||
@@ -69,6 +73,14 @@ function endGame() {
     HEAD_Y >= canvas.height
   ) {
     gameOver = true
+  }
+
+  for (let i = 0; i < SNAKE_PARTS.length; i++) {
+    let part = SNAKE_PARTS[i]
+    if (part.x === HEAD_X && part.y === HEAD_Y) {
+      gameOver = true
+      break
+    }
   }
 
   if (gameOver) {
