@@ -127,8 +127,7 @@ function nearbyTiles(id) {
                 nearbyTiles(element);
             }
         })
-
-
+        if (tiles[id].tile.innerHTML == '☁️') redFlag(id);
     } else {
         tiles[id].tile.innerHTML = bombCountAround;
         tiles[id].tile.setAttribute('class', 'clicked');
