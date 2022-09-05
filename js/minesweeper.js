@@ -7,8 +7,7 @@ let boardSize = 10,
     time = 1,
     gameOver = false,
     timerUpd = null,
-    board = document.querySelector('#game-board'),
-    restartGameBtn = document.querySelector('#game-restart');
+    board = document.querySelector('#game-board');
 
 
 
@@ -142,7 +141,7 @@ async function bombClick() {
     })
     gameOver = true;
     clearTimeout(timerUpd);
-    setTimeout(() => {  hideTiles(); }, 5000);
+    setTimeout(() => {  location.reload(); }, 5000);
 }
 
 window.addEventListener('DOMContentLoaded', () => {

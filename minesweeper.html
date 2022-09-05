@@ -8,22 +8,46 @@
 
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
 </head>
-<body  >
-    <header>
-        
-    </header>
+<body>
 
-    <span class="game-stats">
-        <div class="bomb-count">💣</div>
-        <div class="red-flag-count">🚩 </div>
-        <div class="timer">⌛ 000</div>
-    </span>
+    <div class="wrapper">
+        <header>
+            <img src="img/general/games.svg" alt="Logo" width="60" height="60" title="Minigames" />
+            <a href="minesweeper.html">
+                <h1>Minigames</h1>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li class="nav-link">
+                        <a href="memory.html">Memorygame</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="minesweeper.html">Minesweeper</a> <!-- Include your template name -->
+                    </li>
+                    <li class="nav-link">
+                        <a href="snake-game.html">Snake</a> <!-- Include your template name -->
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="game-stats">
+                <div class="bomb-count">💣</div>
+                <div class="red-flag-count">🚩 </div>
+                <div class="timer">⌛ 000</div>
+            </div>
+            <div id="game-board" oncontextmenu="return false;">
+            </div>
+        </main>
+
+       <footer>
+           <p>Copyright © 2022-2022</p>
+       </footer>
 
 
-    <div id="game-board" oncontextmenu="return false;">
-      <button id="game-restart">New Game</button>    
-    </div>
-
+</div>
     
     <script type="text/javascript" src="js/minesweeper.js" defer></script>
 </body>
