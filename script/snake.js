@@ -8,7 +8,7 @@ class SnakePart {
   }
 }
 
-const SPEED = 14
+let SPEED = 8
 const TILE_COUNT = 20
 const TILE_SIZE = 20
 let HEAD_X = canvas.width / 2
@@ -53,6 +53,13 @@ function drawGame() {
     return gameOverSound.play()
   }
 
+  if (score > 1) {
+    SPEED = 15
+  }
+  if (score > 3) {
+    SPEED = 30
+  }
+  console.log(SPEED)
   drawGameBoard()
   didSnakeAte()
   drawFood()
