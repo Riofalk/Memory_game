@@ -1,5 +1,5 @@
 let boardSize = 10,
-    bombCount = 3,
+    bombCount = 8,
     safeTiles = 0,
     flagCount = bombCount,
     gameStarted = false,
@@ -8,7 +8,7 @@ let boardSize = 10,
     gameOver = false,
     timerUpd = null,
     board = document.querySelector('#game-board'),
-    startGameBtn = document.querySelector('#game-start');
+    restartGameBtn = document.querySelector('#game-restart');
 
 
 
@@ -19,13 +19,6 @@ let redFlagUpd = document.querySelector('.red-flag-count')
     redFlagUpd.innerHTML = (`🚩 ${flagCount}`);
 
 let timer = document.querySelector('.timer')
-
-let difficulty = {
-    easy : Math.floor(boardSize * boardSize * 0,2) ,
-    medium : Math.floor(boardSize * boardSize * 0,25),
-    hard : Math.floor(boardSize * boardSize * 0,3)
-}
-
 
 function timerStart() {
     timerUpd = setInterval(function() {
@@ -59,18 +52,11 @@ function creatBoard() {
         tile.setAttribute('id', id)
         board.appendChild(tile)
         tiles.push({tile,clicked : false, bomb : false, redFlag : false})
-        tile.style.display = 'none';
     }
 
 }
 
-function startGame() {
-    for (let { tile } of tiles) {
-        tile.style.display = 'initial';
-    }
-}
-
-function gameFinishes() {
+function hideTiles() {
     for (let { tile } of tiles) {
         tile.style.display = 'none';
     }
@@ -150,12 +136,13 @@ function redFlag(id) {
     flagCount < 0 ? redFlagUpd.style.color = 'red' : redFlagUpd.style.color = 'black';
 }
 
-function bombClick() {
+async function bombClick() {
     tiles.forEach(element => {
         if(element.bomb) element.tile.innerHTML = "💣";   
     })
     gameOver = true;
     clearTimeout(timerUpd);
+    setTimeout(() => {  hideTiles(); }, 5000);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -172,8 +159,6 @@ board.addEventListener('contextmenu', function(event) {
 
 
 board.onclick = element => {
-
-    if (element.target.id != 'game-start') return;
 
     let id = element.target.id;
     let tileAtributes = tiles[id]

@@ -4,7 +4,7 @@
 
 }
 
-h1 {
+header {
     height: 10vh;
     background-color: blue;
     width: 100%;
@@ -31,33 +31,34 @@ h1 {
 #game-board {
     margin: auto;
     border: 1px solid black;
-    background-color: aqua;
+    border-radius: 5px;
     width: 450px;
     height: 450px;
     display: flex;
     flex-wrap: wrap;
 }
 
-#game-start {
+#game-restart {
+    display: none;
     width: 200px;
     height: 50px;
     justify-content: center;
     color: lightblue;
     font-size: 30px;
-    background-color: blue;
-    border: none;
+    background-color: #4285F4;
     border-radius: 10px;
     margin: auto;
     transition: 0.5s;
-    font-weight: 400;
+    cursor: pointer;
 }
 
-#game-start:hover {
+#game-restart:hover {
     scale: 1.1;
     box-shadow: 10px 5px 5px black;
 }
 
 #game-board > div {
+    justify-content: center;
     border: solid black 1px;
     font-size: 30px;
     width: 43px;
