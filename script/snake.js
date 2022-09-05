@@ -1,6 +1,5 @@
 const canvas = document.getElementById('main-canvas')
 const ctx = canvas.getContext('2d')
-
 class SnakePart {
   constructor(x, y) {
     this.x = x
@@ -45,8 +44,6 @@ function drawGameBoard() {
 }
 
 function drawGame() {
-  // console.log('Game Loop')
-
   snakeHeadLocation()
   let result = endGame()
   if (result) {
@@ -59,7 +56,7 @@ function drawGame() {
   if (score > 10) {
     SPEED = 22
   }
-  // console.log(SPEED)
+
   drawGameBoard()
   didSnakeAte()
   drawFood()
@@ -112,25 +109,25 @@ function drawSnake() {
   ctx.fillStyle = '#90ee90'
   for (let i = 0; i < SNAKE_PARTS.length; i++) {
     let tail = SNAKE_PARTS[i]
-    ctx.fillRect(tail.x, tail.y, TILE_SIZE, TILE_SIZE)
+    ctx.fillRect(tail.x + 2, tail.y + 2, TILE_SIZE - 4, TILE_SIZE - 4)
   }
   SNAKE_PARTS.push(new SnakePart(HEAD_X, HEAD_Y))
   if (SNAKE_PARTS.length > tailLength) {
     SNAKE_PARTS.shift()
   }
 
-  ctx.fillStyle = 'green'
-  ctx.fillRect(HEAD_X, HEAD_Y, TILE_SIZE, TILE_SIZE)
+  // ctx.fillStyle = 'green'
+  // ctx.fillRect(HEAD_X, HEAD_Y, TILE_SIZE, TILE_SIZE)
+
+  ctx.font = '20px serif'
+  ctx.strokeText('🐸', HEAD_X - 3, HEAD_Y + 17)
 }
 
-// console.log(SNAKE_PARTS[0])
 function drawFood() {
   // ctx.fillStyle = 'red'
   // ctx.fillRect(FOOD_X, FOOD_Y, TILE_SIZE, TILE_SIZE)
 
   ctx.font = '20px serif'
-  // ctx.textAlign = 'center'
-  // ctx.textBaseline = 'middle'
   ctx.strokeText('🪰', FOOD_X - 3, FOOD_Y + 17)
 }
 
