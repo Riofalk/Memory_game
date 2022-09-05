@@ -1,12 +1,12 @@
 # Team:
 
-**Maksim Volkmann**
-**Lauris Stirna**
-**Nikita B**
+- **Maksim Volkmann**
+- **Lauris Stirna**
+- **Nikita B**
 
 # Mini Games Website
 
-### We created games like:
+### The games we created:
 
 ```
 Minesweeper
