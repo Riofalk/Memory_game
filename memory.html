@@ -1,128 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="img/general/favicon.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="img/general/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/general.css" />
-    <!-- Don't touch stylesheet above and all images which path contains 'img/general/' -->
     <link rel="stylesheet" href="css/memory.css" />
-    <!-- Include your styles file instead -->
-    <title>Minigames</title>
-  </head>
+    <title>Memory game!</title>
+</head>
 
-  <body>
+<body>
     <div class="wrapper">
-      <!-- Include in your template tag right above -->
-      <!-- HEADER -->
-      <header>
-        <!-- Include in your template tag right above as well as its content -->
-        <div class="wrapper-header">
-          <img
-            src="img/general/games.svg"
-            alt="Logo"
-            width="60"
-            height="60"
-            title="Minigames"
-          />
-          <a href="memory.html">
-            <!-- Include your template name above instead -->
-            <h1>Minigames</h1>
-          </a>
-        </div>
-        <nav>
-          <ul class="nav-links">
-            <li class="nav-link">
-              <a href="/memory.html">Memorygame</a>
-            </li>
-            <li class="nav-link">
-              <a href="/minesweeper.html">Minesweeper</a>
-              <!-- Include your template name -->
-            </li>
-            <li class="nav-link">
-              <a href="/snake-game.html">Snake</a>
-              <!-- Include your template name -->
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <!-- MAIN -->
-      <main>
-        <!-- Include in your template tag right above -->
-        <!-- Place here your game markup instead, create independent your images folder and fill in correct img paths -->
-        <div class="wrapper-main">
-          <img
-            src="img/memory/mind-logo.svg"
-            alt="Memory game logo"
-            width="95"
-            height="95"
-            title="Memory game"
-          />
-          <h1>Memory game</h1>
-        </div>
-        <section class="memory-game">
-          <div class="memory-card" data-tool="aurelia">
-            <img class="front" src="img/memory/aurelia.svg" alt="Aurelia" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="vue">
-            <img class="front" src="img/memory/vue.svg" alt="Vue" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="aurelia">
-            <img class="front" src="img/memory/aurelia.svg" alt="Aurelia" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="vue">
-            <img class="front" src="img/memory/vue.svg" alt="Vue" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="angular">
-            <img class="front" src="img/memory/angular.svg" alt="Angular" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="ember">
-            <img class="front" src="img/memory/ember.svg" alt="Ember" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="angular">
-            <img class="front" src="img/memory/angular.svg" alt="Angular" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="ember">
-            <img class="front" src="img/memory/ember.svg" alt="Ember" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="backbone">
-            <img class="front" src="img/memory/backbone.svg" alt="Backbone" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="react">
-            <img class="front" src="img/memory/react.svg" alt="React" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="backbone">
-            <img class="front" src="img/memory/backbone.svg" alt="Backbone" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-          <div class="memory-card" data-tool="react">
-            <img class="front" src="img/memory/react.svg" alt="React" />
-            <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
-          </div>
-        </section>
-      </main>
-      <!-- FOOTER -->
-      <footer>
-        <!-- Include in your template tag right above as well as its content  -->
-        <p>Copyright © 2022-2022</p>
-      </footer>
+        <header>
+            <div class="wrapper-header">
+                <img src="img/general/games.svg" alt="Logo" width="60" height="60" title="Minigames" />
+                <a href="/memory.html">
+                    <h1>Minigames</h1>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li class="nav-link">
+                        <a href="/memory.html">Memorygame</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/minesweeper.html">Minesweeper</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/snake-game.html">Snake</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="wrapper-main">
+                <img src="img/memory/mind-logo.svg" alt="Memory game logo" width="95" height="95" title="Memory game" />
+                <h1>Memory game</h1>
+            </div>
+            <section class="memory-game">
+                <div class="memory-card" data-tool="HTML">
+                    <img class="front" src="img/memory/HTML.svg" alt="HTML" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="CSS">
+                    <img class="front" src="img/memory/CSS.svg" alt="CSS" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="HTML">
+                    <img class="front" src="img/memory/HTML.svg" alt="HTML" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="CSS">
+                    <img class="front" src="img/memory/CSS.svg" alt="CSS" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="JS">
+                    <img class="front" src="img/memory/JS.svg" alt="JS" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="NodeJS">
+                    <img class="front" src="img/memory/NodeJS.svg" alt="NodeJS" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="JS">
+                    <img class="front" src="img/memory/JS.svg" alt="JS" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="NodeJS">
+                    <img class="front" src="img/memory/NodeJS.svg" alt="NodeJS" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="MongoDB">
+                    <img class="front" src="img/memory/MongoDB.svg" alt="MongoDB" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="MaterialUI">
+                    <img class="front" src="img/memory/MaterialUI.svg" alt="MaterialUI" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="MongoDB">
+                    <img class="front" src="img/memory/MongoDB.svg" alt="MongoDB" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+                <div class="memory-card" data-tool="MaterialUI">
+                    <img class="front" src="img/memory/MaterialUI.svg" alt="MaterialUI" />
+                    <img class="back" src="img/memory/card-back.svg" alt="JS Badge" />
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Copyright © 2022-2022</p>
+        </footer>
     </div>
     <script src="js/memory.js"></script>
-    <!-- Include your script file instead -->
-  </body>
+</body>
+
 </html>

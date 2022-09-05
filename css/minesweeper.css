@@ -1,52 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap");
+
 * {
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "IBM Plex Serif", serif;
 }
 
 main {
-    display: flex;
-    padding: 5vh 0vh;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  padding: 5vh 0vh;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .game-stats {
-    display: flex;
-    flex-direction: column;
-    font-size: 6vh; 
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  font-size: 6vh;
+  justify-content: space-between;
 }
-
 
 .bomb-count,
 .timer,
 .red-flag-count {
-    margin: 5vh;
- 
+  margin: 5vh;
 }
 
 #game-board {
-    width: 80vh;
-    height: 80vh;
-    display: flex;
-    flex-wrap: wrap;
-
+  width: 80vh;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #game-board > div {
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    border: 0.1vh solid black;
-    font-size: 5vh;
-    width: 8vh;
-    height: 8vh;
-    background-color: red;
-    cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 0.1vh solid black;
+  font-size: 5vh;
+  width: 8vh;
+  height: 8vh;
+  background-color: red;
+  cursor: pointer;
 }
 
 #game-board > div:hover {
-    background-color: brown;
+  background-color: brown;
 }
-
