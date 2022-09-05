@@ -6,18 +6,40 @@ let boardSize = 10,
     tiles = [],
     time = 1,
     gameOver = false,
+    gameWon = false,
     timerUpd = null,
-    board = document.querySelector('#game-board');
+    board = document.querySelector('.game-board'),
+    gameResults = document.querySelector('.game-results');
 
 
 
 let bombCountUpd = document.querySelector('.bomb-count')
-    bombCountUpd.innerHTML = (`💣 ${bombCount}`);
+    bombCountUpd.innerHTML = (`☀️ ${bombCount}`);
 
 let redFlagUpd = document.querySelector('.red-flag-count')
-    redFlagUpd.innerHTML = (`🚩 ${flagCount}`);
+    redFlagUpd.innerHTML = (`☁️ ${flagCount}`);
 
 let timer = document.querySelector('.timer')
+
+function varUpd() {
+
+}
+
+async function hideTiles() {
+    for (let {tile} of tiles) {
+        tile.style.visibility = 'hidden';
+        await new Promise(r => setTimeout(r, 50));
+    }
+    //setTimeout(deleteTiles(), 5000)
+
+}
+
+function deleteTiles() {
+    for(let {tile} of tiles) tile.remove()
+
+}
+
+
 
 function timerStart() {
     timerUpd = setInterval(function() {
@@ -52,13 +74,6 @@ function creatBoard() {
         board.appendChild(tile)
         tiles.push({tile,clicked : false, bomb : false, redFlag : false})
     }
-
-}
-
-function hideTiles() {
-    for (let { tile } of tiles) {
-        tile.style.display = 'none';
-    }
 }
 
 
@@ -68,11 +83,11 @@ function nearbyTiles(id) {
 
     safeTiles++;
 
-    tiles[id].tile.style.backgroundColor = 'yellow';
 
     id = Number(id);
 
     tiles[id].clicked = true;  
+    tiles[id].tile.setAttribute('class', 'clicked');
 
     let rightBorder = id.toString().slice(-1) == '9',
         leftBorder = id.toString().slice(-1) == '0';
@@ -108,14 +123,15 @@ function nearbyTiles(id) {
     if (bombCountAround == 0) {
         nearbyTilesArr.forEach (element => {
             if(!tiles[element].clicked) {
-                tiles[element].clicked = true;
+                tiles[element].tile.setAttribute('class', 'clicked');
                 nearbyTiles(element);
-                tiles[element].tile.style.backgroundColor = 'yellow';
             }
         })
+
+
     } else {
         tiles[id].tile.innerHTML = bombCountAround;
-        tiles[id].tile.style.backgroundColor = 'yellow';
+        tiles[id].tile.setAttribute('class', 'clicked');
     }
 }
 
@@ -124,25 +140,27 @@ function redFlag(id) {
     let {tile} = tiles[id];
     if(!tiles[id].redFlag) {
         tiles[id].redFlag = true;
-        tile.innerHTML = "🚩";
+        tile.innerHTML = "☁️";
         flagCount--;
     } else {
         tile.innerHTML = "";
         tiles[id].redFlag = false;
         flagCount++;
     }
-    redFlagUpd.innerHTML = (`🚩 ${flagCount}`);
+    redFlagUpd.innerHTML = (`☁️ ${flagCount}`);
     flagCount < 0 ? redFlagUpd.style.color = 'red' : redFlagUpd.style.color = 'black';
 }
 
 async function bombClick() {
     tiles.forEach(element => {
-        if(element.bomb) element.tile.innerHTML = "💣";   
+        if(element.bomb) element.tile.innerHTML = "☀️";   
     })
     gameOver = true;
     clearTimeout(timerUpd);
-    setTimeout(() => {  location.reload(); }, 5000);
+    setTimeout(() => { hideTiles() }, 5000);
+
 }
+
 
 window.addEventListener('DOMContentLoaded', () => {
     creatBoard();
@@ -179,9 +197,8 @@ board.onclick = element => {
     else nearbyTiles(id);
 
     if (boardSize ** 2 == bombCount + safeTiles) {
+        gameWon = true;
         bombClick();
-        let h1Dom = document.querySelector('h1');
-        h1Dom.innerHTML = 'Winner-winner, chicken dinner';
     }
 } 
 

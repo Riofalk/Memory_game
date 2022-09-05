@@ -1,7 +1,12 @@
 * {
     text-align: center;
-    margin: 0px;
-    padding: 0px;
+    
+}
+
+:root {
+    --main-color:#ADD8E6;
+    --main-color-dark: #8AC7DB;
+    --accent-color: #67B7D1;
 }
 
 main {
@@ -9,6 +14,7 @@ main {
     padding: 5vh 0vh;
     align-items: center;
     justify-content: space-around;
+    background-color: var(--main-color);
 }
 
 .game-stats {
@@ -18,35 +24,64 @@ main {
     justify-content: space-between;
 }
 
-
 .bomb-count,
 .timer,
 .red-flag-count {
+    width: 15vw;
+    border-radius: 1vh;
     margin: 5vh;
+    padding: 2vh;
+    background-color: var(--main-color-dark);
+    border: solid 0.5vh var(--accent-color);
  
 }
 
-#game-board {
+.game-board-wrapper {
+    width: 85vh;
+    height: 85vh;
+    background-color: white;
+    border-radius: 5vh;
+}
+
+#restart,
+h1.game-result {
+    color: white;
+    transition: all 1s linear;
+}
+
+
+.game-board {
+    transform: translate(2.5vh, 2.5vh);
     width: 80vh;
     height: 80vh;
     display: flex;
     flex-wrap: wrap;
-
 }
 
-#game-board > div {
-    align-items: center;
-    justify-content: center;
+.game-board > div {
+    transition: 0.5s;
     box-sizing: border-box;
-    border: 0.1vh solid black;
+    border: 0.35vh solid white;
+    background-color: var(--main-color-dark);
     font-size: 5vh;
     width: 8vh;
     height: 8vh;
-    background-color: red;
     cursor: pointer;
 }
 
-#game-board > div:hover {
-    background-color: brown;
+.game-board > div:hover {
+    background-color: var(--accent-color);
+
 }
+
+footer {
+    background-color: var( --main-color-dark);
+    border-top: solid #67B7D1 3px;
+}
+
+.clicked {
+    background-color: var(--main-color) !important;
+}
+
+
 

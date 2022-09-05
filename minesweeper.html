@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minesweeper! 💣</title>
+    <title>Minesweeper ☀️</title>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/minesweeper.css">
 
@@ -36,11 +36,21 @@
 
         <main>
             <div class="game-stats">
-                <div class="bomb-count">💣</div>
-                <div class="red-flag-count">🚩 </div>
+                <div class="bomb-count"></div>
+                <div class="red-flag-count"></div>
                 <div class="timer">⌛ 000</div>
             </div>
-            <div id="game-board" oncontextmenu="return false;"> </div>                
+            <div class="game-board-wrapper">
+
+
+                <div id="game-results">
+
+                </div>
+
+
+                <div class="game-board" oncontextmenu="return false;"> </div>   
+            </div>
+             
         </main>
 
         <footer>
