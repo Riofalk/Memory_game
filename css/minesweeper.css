@@ -1,19 +1,21 @@
 * {
-    font-family: 'IBM Plex Serif', serif;
     text-align: center;
     margin: 0px;
     padding: 0px;
 }
 
-
 main {
     display: flex;
+    padding: 5vh 0vh;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .game-stats {
     display: flex;
     flex-direction: column;
     font-size: 6vh; 
+    justify-content: space-between;
 }
 
 
@@ -25,8 +27,6 @@ main {
 }
 
 #game-board {
-    margin: auto;
-    background-color: yellow;
     width: 80vh;
     height: 80vh;
     display: flex;
@@ -36,6 +36,7 @@ main {
 
 #game-board > div {
     align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     border: 0.1vh solid black;
     font-size: 5vh;
@@ -49,128 +50,3 @@ main {
     background-color: brown;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
-
-body,
-html {
-  font-family: 'Ubuntu', sans-serif;
-  height: 100vh;
-}
-
-main {
-  flex: 1 1 auto;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
-/* HEADER */
-header {
-  background-color: #edede9;
-  height: 90px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: end;
-}
-
-.nav-link {
-  margin-left: 25px;
-}
-
-.nav-link a {
-  font-size: 24px;
-  font-weight: 600;
-  color: #2b2d42;
-  text-decoration: none;
-  transition: 0.5s;
-}
-
-.nav-link a:hover {
-  color: #6c757d;
-  transition: 0.5s;
-}
-
-.wrapper-header {
-  display: flex;
-  justify-content: space-around;
-}
-
-.wrapper-header h1 {
-  margin-top: 12px;
-  margin-left: 8px;
-}
-
-.wrapper-header a {
-  color: #011627;
-  text-decoration: none;
-}
-
-/* FOOTER */
-footer {
-  background-color: #353535;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: auto;
-}
-
-footer p {
-  color: #fff;
-}
-
-/* ADAPTIVE */
-@media screen and (max-width: 720.01px) {
-  .wrapper-header h1 {
-    font-size: 24px;
-    margin-top: 17px;
-  }
-  .nav-link {
-    margin-left: 15px;
-  }
-  .nav-link a {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 610.01px) {
-  .wrapper-header h1 {
-    font-size: 22px;
-    margin-top: 17px;
-  }
-  .nav-link {
-    margin-left: 15px;
-  }
-  .nav-link a {
-    font-size: 18px;
-  }
-}
-
-@media screen and (max-width: 520.01px) {
-  .wrapper-header h1 {
-    font-size: 22px;
-    margin-top: 17px;
-  }
-  .nav-links {
-    flex-direction: column;
-  }
-  .nav-link {
-    margin-top: 5px;
-  }
-  .nav-link:first-child {
-    margin-top: 0;
-  }
-  .nav-link a {
-    font-size: 18px;
-  }
-}
