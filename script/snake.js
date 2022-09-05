@@ -129,19 +129,21 @@ function drawSnake() {
     SNAKE_PARTS.shift()
   }
 
+  // head
   // ctx.fillStyle = 'green'
   // ctx.fillRect(HEAD_X, HEAD_Y, TILE_SIZE, TILE_SIZE)
 
-  ctx.font = '20px serif'
-  ctx.strokeText('🐸', HEAD_X - 3, HEAD_Y + 17)
+  ctx.font = '22px serif'
+  ctx.strokeText('🐸', HEAD_X - 5, HEAD_Y + 17)
 }
 
 function drawFood() {
+  // food
   // ctx.fillStyle = 'red'
   // ctx.fillRect(FOOD_X, FOOD_Y, TILE_SIZE, TILE_SIZE)
 
-  ctx.font = '20px serif'
-  ctx.strokeText('🪰', FOOD_X - 3, FOOD_Y + 17)
+  ctx.font = '21px serif'
+  ctx.strokeText('🪰', FOOD_X - 5, FOOD_Y + 17)
 }
 
 function didSnakeAte() {
