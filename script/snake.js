@@ -20,6 +20,8 @@ let FOOD_Y = canvas.width / 4
 const SNAKE_PARTS = []
 let tailLength = 2
 let score = 0
+const moreSound = new Audio('/media/more.mp3')
+const gameOverSound = new Audio('/media/game_over.mp3')
 
 function drawGameBoard() {
   const FIRST_BOARD_COLOR = '#2c2c54'
@@ -48,7 +50,7 @@ function drawGame() {
   snakeHeadLocation()
   let result = endGame()
   if (result) {
-    return
+    return gameOverSound.play()
   }
 
   drawGameBoard()
@@ -132,6 +134,7 @@ function didSnakeAte() {
     console.log(HEAD_X, HEAD_Y)
     tailLength++
     score++
+    moreSound.play()
   }
 }
 
