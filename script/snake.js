@@ -53,11 +53,11 @@ function drawGame() {
     return gameOverSound.play()
   }
 
-  if (score > 1) {
-    SPEED = 15
+  if (score > 2) {
+    SPEED = 12
   }
-  if (score > 3) {
-    SPEED = 30
+  if (score > 10) {
+    SPEED = 22
   }
   // console.log(SPEED)
   drawGameBoard()
@@ -125,8 +125,13 @@ function drawSnake() {
 
 // console.log(SNAKE_PARTS[0])
 function drawFood() {
-  ctx.fillStyle = 'red'
-  ctx.fillRect(FOOD_X, FOOD_Y, TILE_SIZE, TILE_SIZE)
+  // ctx.fillStyle = 'red'
+  // ctx.fillRect(FOOD_X, FOOD_Y, TILE_SIZE, TILE_SIZE)
+
+  ctx.font = '20px serif'
+  // ctx.textAlign = 'center'
+  // ctx.textBaseline = 'middle'
+  ctx.strokeText('🪰', FOOD_X - 3, FOOD_Y + 17)
 }
 
 function didSnakeAte() {
