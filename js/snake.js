@@ -119,7 +119,7 @@ function drawSpeed() {
 }
 
 function drawSnake() {
-  ctx.fillStyle = '#90ee90'
+  ctx.fillStyle = 'rgba(0, 255, 0, 0.8)'
   for (let i = 0; i < SNAKE_PARTS.length; i++) {
     let tail = SNAKE_PARTS[i]
     ctx.fillRect(tail.x + 1, tail.y + 1, TILE_SIZE - 2, TILE_SIZE - 2)
