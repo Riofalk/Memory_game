@@ -13,3 +13,5 @@ Memory game
 - **Maksim Volkmann**
 - **Lauris Stirna**
 - **Nikita B**
+
+Live version [here](https://riofalk.github.io/Memory_game/).
