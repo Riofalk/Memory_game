@@ -96,6 +96,7 @@ header {
 .wrapper-header a {
   color: #011627;
   text-decoration: none;
+  z-index: 1;
 }
 
 /* FOOTER */
