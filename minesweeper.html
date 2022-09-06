@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="img/general/favicon.ico"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/minesweeper.css" />
-    <title>Minesweeper! 💣</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper ☀️</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/minesweeper.css">
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
   <body>
     <div class="wrapper">
       <header>
@@ -39,14 +36,25 @@
           </ul>
         </nav>
       </header>
-      <main>
-        <div class="game-stats">
-          <div class="bomb-count">💣</div>
-          <div class="red-flag-count">🚩</div>
-          <div class="timer">⌛ 000</div>
-        </div>
-        <div id="game-board" oncontextmenu="return false;"></div>
-      </main>
+        <main>
+            <div class="game-stats">
+                <div class="bomb-count"></div>
+                <div class="red-flag-count"></div>
+                <div class="timer">⌛ 000</div>
+                <button class="new-gameBtn">Play</button>
+            </div>
+            <div class="game-board-wrapper">
+
+
+                <div id="game-results">
+
+                </div>
+
+
+                <div class="game-board" oncontextmenu="return false;"> </div>   
+            </div>
+             
+        </main>
       <footer>
         <span>Maksim Volkamnn | Lauris Stirna | Nikita B</span>
         <p>Copyright © 2022-2022</p>
