@@ -1,8 +1,10 @@
 const cards = document.querySelectorAll(".memory-card");
-let firstCard, secondCard;
-
 let hasFlippedCard = false;
 let lockBoard = false;
+let firstCard;
+let secondCard;
+
+cards.forEach((card) => card.addEventListener("click", flipCard));
 
 function flipCard() {
   if (lockBoard) return;
@@ -18,30 +20,31 @@ function flipCard() {
   checkForMatch();
 }
 
-function checkForMatch() {
+const checkForMatch = () => {
   let isMatch = firstCard.dataset.tool === secondCard.dataset.tool;
   isMatch ? disableCards() : unflipCards();
-}
+};
 
-function disableCards() {
+const disableCards = () => {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
   resetBoard();
-}
+};
 
-function unflipCards() {
+const unflipCards = () => {
   lockBoard = true;
   setTimeout(() => {
     firstCard.classList.remove("flip");
     secondCard.classList.remove("flip");
     resetBoard();
-  }, 1500);
-}
+  }, 700);
+};
 
-function resetBoard() {
+const resetBoard = () => {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
-}
+  winCondition();
+};
 
 (function shuffle() {
   cards.forEach((card) => {
@@ -50,4 +53,12 @@ function resetBoard() {
   });
 })();
 
-cards.forEach((card) => card.addEventListener("click", flipCard));
+const winCondition = () => {
+  const contains = Object.values(cards).every((card) =>
+    card.classList.contains("flip")
+  );
+  if (contains) {
+    const h1 = document.querySelector("h1");
+    h1.innerHTML = "Win! Click to restart";
+  }
+};

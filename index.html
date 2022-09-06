@@ -4,14 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="img/general/favicon.ico"
-      type="image/x-icon"
-    />
     <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/snake.css" />
-    <title>Snake!</title>
+    <title>Minigames</title>
   </head>
   <body>
     <div class="wrapper">
@@ -38,28 +32,36 @@
           </ul>
         </nav>
       </header>
-      <div class="snake-main">
-        <h1 class="snake-h1">SUPER SNAKE GAME</h1>
-        <canvas id="main-canvas" width="400" height="400">
-          Upgrade your browser or enable Javascript!
-        </canvas>
-        <div class="snake-buttons">
-          <div class="btn-shadow">
-            <button id="game-start-button" class="btn btn-start">
-              <span class="button-text">START</span>
-            </button>
-          </div>
-          <div class="btn-shadow">
-            <button id="game-restart-button" class="btn btn-restart">
-              <span class="button-text">RESTART</span>
-            </button>
-          </div>
+      <div class="game-box-wrapper">
+        <div class="game-box">
+          <h2>Memory game</h2>
+          <a href="/memory.html">
+            <button>Play now!</button>
+          </a>
+          <img src="/img/general/memorygame_400_v1.jpg" alt="snake-game" />
         </div>
-        <div class="howtoplay">
-          <p>* Control the snake with W A S D or ◀ ▶▲▼.</p>
-          <p>* To start the game press "Start" or any control button.</p>
-          <p>* Snake speed increases when you score 2 and 10.</p>
-          <p>* Try to score as much points as you can.</p>
+        <div class="game-box">
+          <h2>Minesweeper</h2>
+          <a href="/minesweeper.html">
+            <button>Play now!</button>
+          </a>
+          <img src="/img/general/minesweeper_400_v1.jpg" alt="snake-game" />
+        </div>
+        <div class="game-box">
+          <h2>Snake Game</h2>
+          <a href="/snake-game.html">
+            <button>Play now!</button>
+          </a>
+          <img src="/img/general/snake_400_v1.jpg" alt="snake-game" />
+        </div>
+        <div class="game-box">
+          <img src="/img/general/GTAVI_400_v1.jpg" alt="snake-game" />
+        </div>
+        <div class="game-box">
+          <img src="/img/general/HF3_400_v1.jpg" alt="snake-game" />
+        </div>
+        <div class="game-box">
+          <img src="/img/general/sc3_400_v1.jpg" alt="snake-game" />
         </div>
       </div>
       <footer>
@@ -67,6 +69,5 @@
         <p>Copyright © 2022-2022</p>
       </footer>
     </div>
-    <script src="js/snake.js"></script>
   </body>
 </html>

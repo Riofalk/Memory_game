@@ -1,4 +1,3 @@
-
 :root {
     --custom-white: #FFFDFA;
     --main-color:#ADD8E6;
@@ -93,6 +92,3 @@ footer {
 .clicked {
     background-color: var(--main-color) !important;
 }
-
-
-

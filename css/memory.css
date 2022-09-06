@@ -31,12 +31,12 @@
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  transition: transform 0.4s;
 }
 
 .memory-card:active {
   transform: scale(0.97);
-  transition: transform 0.2s;
+  transition: transform 0.4s;
 }
 
 .memory-card.flip {
@@ -47,7 +47,7 @@
 .back {
   width: 100%;
   height: 100%;
-  padding: 75px;
+  padding: 60px;
   position: absolute;
   border-radius: 8px;
   background: #834d9b;
