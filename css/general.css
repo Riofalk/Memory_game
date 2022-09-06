@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 /* GENERAL */
 * {
@@ -10,7 +10,7 @@
 
 body,
 html {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   height: 100vh;
 }
 
@@ -26,7 +26,6 @@ main {
 
 /* HEADER */
 header {
-  background-color: #edede9;
   height: 90px;
   display: flex;
   justify-content: space-around;
@@ -34,14 +33,12 @@ header {
   background: linear-gradient(160deg, #f93e3e, rgba(255, 0, 0, 0) 80.71%),
     linear-gradient(157deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 60.71%),
     linear-gradient(336deg, rgba(218, 204, 12, 0.8), rgba(0, 0, 255, 0) 90.71%);
-  background-size: 100%;
   border-bottom: 8px solid #d91965;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  justify-content: end;
 }
 
 .nav-link {
@@ -49,8 +46,7 @@ header {
 }
 
 .nav-link a {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
+  font-family: "Press Start 2P", cursive;
   font-weight: 600;
   color: #2b2d42;
   text-decoration: none;
@@ -67,6 +63,26 @@ header {
   align-items: center;
 }
 
+.wrapper-header h1 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 22px;
+  margin-top: 12px;
+  margin-left: 8px;
+}
+
+.wrapper-header a {
+  color: #011627;
+  text-decoration: none;
+}
+
+.wrapper-header img {
+  width: 140px;
+  animation-name: logoMove;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-duration: 4s;
+}
+
 @keyframes logoMove {
   from {
     padding-top: 50px;
@@ -79,41 +95,20 @@ header {
   }
 }
 
-.wrapper-header img {
-  width: 140px;
-  animation-name: logoMove;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-duration: 4s;
-}
-
-.wrapper-header h1 {
-  font-family: 'Press Start 2P', cursive;
-  margin-top: 12px;
-  margin-left: 8px;
-}
-
-.wrapper-header a {
-  color: #011627;
-  text-decoration: none;
-  z-index: 1;
-}
-
 /* FOOTER */
 footer {
-  display: flex;
-  flex-direction: column;
   color: #fff;
   height: 80px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
   background: linear-gradient(160deg, #f93e3e, rgba(255, 0, 0, 0) 80.71%),
     linear-gradient(157deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 60.71%),
     linear-gradient(336deg, rgba(218, 204, 12, 0.8), rgba(0, 0, 255, 0) 90.71%);
   background-size: 100%;
   border-top: 8px solid #d91965;
+  margin-top: auto;
 }
 
 footer span {
@@ -141,18 +136,12 @@ footer p {
 }
 
 .game-box-wrapper .game-box h2 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 14px;
   text-align: center;
-  color: #fff;
   position: absolute;
-  top: 7vh;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
-  z-index: 1;
+  top: 25px;
+  margin: 0 auto;
 }
 
 .game-box-wrapper .game-box:hover h2 {
@@ -160,32 +149,27 @@ footer p {
 }
 
 .game-box-wrapper .game-box a button {
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+  text-transform: uppercase;
   position: absolute;
-  bottom: 7vh;
+  bottom: 4vh;
   left: 0;
   right: 0;
-  margin-left: auto;
-  margin-right: auto;
   width: 150px;
-  z-index: 1;
   border-color: #3498db;
-  color: #fff;
-  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
-  transition: all 150ms ease-in-out;
-  box-sizing: border-box;
-  background-color: transparent;
   border-radius: 7px;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
   cursor: pointer;
-  font-weight: 400;
-  line-height: 1;
   padding: 13px 15px 10px;
-  text-transform: uppercase;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 10px;
+  margin: 0 auto;
+  z-index: 1;
+  transition: all 150ms ease-in-out;
 }
 
 .game-box-wrapper .game-box a button:hover {
-  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  box-shadow: 0 0 40px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
 
 .game-box-wrapper .game-box img {
@@ -202,32 +186,6 @@ footer p {
 /* ADAPTIVE */
 @media screen and (max-width: 720.01px) {
   .wrapper-header h1 {
-    font-size: 24px;
-    margin-top: 17px;
-  }
-  .nav-link {
-    margin-left: 15px;
-  }
-  .nav-link a {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 610.01px) {
-  .wrapper-header h1 {
-    font-size: 22px;
-    margin-top: 17px;
-  }
-  .nav-link {
-    margin-left: 15px;
-  }
-  .nav-link a {
-    font-size: 18px;
-  }
-}
-
-@media screen and (max-width: 520.01px) {
-  .wrapper-header h1 {
     font-size: 22px;
     margin-top: 17px;
   }
@@ -235,12 +193,56 @@ footer p {
     flex-direction: column;
   }
   .nav-link {
-    margin-top: 5px;
-  }
-  .nav-link:first-child {
-    margin-top: 0;
+    margin-left: 15px;
   }
   .nav-link a {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 919.01px) {
+  .wrapper-header h1 {
+    font-size: 20px;
+    margin-top: 17px;
+  }
+  .nav-links {
+    flex-direction: column;
+  }
+  .nav-link {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 610.01px) {
+  .wrapper-header h1 {
     font-size: 18px;
+    margin-top: 17px;
+  }
+  .nav-links {
+    flex-direction: column;
+  }
+  .nav-link {
+    margin-left: 15px;
+  }
+  .nav-link a {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 520.01px) {
+  .wrapper-header h1 {
+    display: none;
+  }
+  .nav-links {
+    flex-direction: column;
+  }
+  .nav-link a {
+    font-size: 14px;
+  }
+  .game-box-wrapper .game-box img {
+    width: 300px;
+  }
+  footer span {
+    font-size: 13px;
   }
 }
