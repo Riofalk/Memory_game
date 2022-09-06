@@ -1,5 +1,5 @@
 let boardSize = 10,
-    bombCount = 8,
+    bombCount = 15,
     safeTiles = 0,
     flagCount = bombCount,
     gameStarted = false,
@@ -9,7 +9,8 @@ let boardSize = 10,
     gameWon = false,
     timerUpd = null,
     board = document.querySelector('.game-board'),
-    gameResults = document.querySelector('.game-results');
+    gameResults = document.querySelector('.game-results'),
+    playBtn = document.querySelector('.new-gameBtn');
 
 
 
@@ -22,8 +23,35 @@ let redFlagUpd = document.querySelector('.red-flag-count')
 let timer = document.querySelector('.timer')
 
 function varUpd() {
-
+    boardSize = 10,
+    bombCount = 15,
+    safeTiles = 0,
+    flagCount = bombCount,
+    gameStarted = false,
+    tiles = [],
+    time = 1,
+    gameOver = false,
+    gameWon = false,
+    timerUpd = null;
 }
+
+function tileDelete() {
+    for(let {tile} of tiles) {
+        tile.remove();
+    }
+}
+
+function newGame() {
+    tileDelete();
+    clearTimeout(timerUpd);
+    timer.innerHTML = (`⌛ 000`);
+    varUpd();
+    creatBoard();
+}
+
+playBtn.addEventListener('click', function()  {
+    newGame();
+})
 
 
 function timerStart() {

@@ -16,6 +16,21 @@ main {
     background-color: var(--main-color);
 }
 
+
+
+.overlay {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+    opacity: 0.5;
+}
+
 .game-stats {
     display: flex;
     flex-direction: column;
@@ -77,6 +92,13 @@ main {
     width: 8vh;
     height: 8vh;
     cursor: pointer;
+}
+
+.game-outcome-msg {
+    font-size: 5vh;
+    width: 50%;
+    height: 50%;
+    background-color: red;
 }
 
 .game-board > div:hover {
