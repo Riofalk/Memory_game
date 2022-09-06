@@ -16,6 +16,21 @@ main {
     background-color: var(--main-color);
 }
 
+
+
+.overlay {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+    opacity: 0.5;
+}
+
 .game-stats {
     display: flex;
     flex-direction: column;
@@ -25,13 +40,14 @@ main {
 .timer,
 .red-flag-count,
 .new-gameBtn {
-    font-size: 2.5vw; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 2.5vw;
+    padding: 0.5vw 0vw; 
     height: 10vh;
-    width: 15vw;
+    width: 12.5vw;
     border-radius: 1vh;
     margin-top: 5vh;
     background-color: var(--main-color-dark);
-    border: solid 0.5vh var(--accent-color);
 }
 
 .new-gameBtn {
@@ -47,7 +63,6 @@ main {
     rgb(255, 156, 85) 0px 0px 0px 12px, 
     rgb(255, 85, 85) 0px 0px 0px 15px;
     cursor: pointer;
-    background-color: var(--main-color);
     font-size: 2.7vw;
 }
 
@@ -77,6 +92,13 @@ main {
     width: 8vh;
     height: 8vh;
     cursor: pointer;
+}
+
+.game-outcome-msg {
+    font-size: 5vh;
+    width: 50%;
+    height: 50%;
+    background-color: red;
 }
 
 .game-board > div:hover {
