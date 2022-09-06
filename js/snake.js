@@ -19,8 +19,8 @@ let FOOD_Y = canvas.width / 4
 const SNAKE_PARTS = []
 let tailLength = 2
 let score = 0
-const moreSound = new Audio('/sound/more.mp3')
-const gameOverSound = new Audio('/sound/game_over.mp3')
+const moreSound = new Audio('sound/more.mp3')
+const gameOverSound = new Audio('sound/game_over.mp3')
 
 function drawGameBoard() {
   const FIRST_BOARD_COLOR = '#2c2c54'
