@@ -26,19 +26,14 @@ function drawGameBoard() {
   const FIRST_BOARD_COLOR = '#2c2c54'
   const SECOND_BOARD_COLOR = '#474787'
 
-  for (let i = 1; i <= TILE_COUNT; i++) {
-    for (let q = 1; q <= TILE_COUNT; q++) {
+  for (let i = 0; i <= TILE_COUNT; i++) {
+    for (let q = 0; q <= TILE_COUNT; q++) {
       if ((i + q) % 2 == 0) {
         ctx.fillStyle = FIRST_BOARD_COLOR
       } else {
         ctx.fillStyle = SECOND_BOARD_COLOR
       }
-      ctx.fillRect(
-        TILE_COUNT * (i - 1),
-        TILE_COUNT * (q - 1),
-        TILE_COUNT,
-        TILE_COUNT,
-      )
+      ctx.fillRect(TILE_COUNT * i, TILE_COUNT * q, TILE_COUNT, TILE_COUNT)
     }
   }
 }
