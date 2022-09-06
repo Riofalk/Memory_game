@@ -100,18 +100,28 @@ header {
 
 /* FOOTER */
 footer {
-  background-color: #353535;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: auto;
-  /* padding-top: 50px; */
+  background: linear-gradient(160deg, #f93e3e, rgba(255, 0, 0, 0) 80.71%),
+    linear-gradient(157deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 60.71%),
+    linear-gradient(336deg, rgba(218, 204, 12, 0.8), rgba(0, 0, 255, 0) 90.71%);
+  background-size: 100%;
+  border-top: 8px solid #d91965;
+}
+
+footer span {
+  font-size: 18px;
 }
 
 footer p {
-  color: #fff;
+  padding-top: 8px;
+  font-size: 12px;
 }
 
 .game-box-wrapper {
