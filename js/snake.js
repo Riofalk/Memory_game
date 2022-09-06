@@ -26,8 +26,8 @@ function drawGameBoard() {
   const FIRST_BOARD_COLOR = '#2c2c54'
   const SECOND_BOARD_COLOR = '#474787'
 
-  for (let i = 1; i <= 20; i++) {
-    for (let q = 1; q <= 20; q++) {
+  for (let i = 1; i <= TILE_COUNT; i++) {
+    for (let q = 1; q <= TILE_COUNT; q++) {
       if ((i + q) % 2 == 0) {
         ctx.fillStyle = FIRST_BOARD_COLOR
       } else {
