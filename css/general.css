@@ -36,11 +36,6 @@ header {
     linear-gradient(336deg, rgba(218, 204, 12, 0.8), rgba(0, 0, 255, 0) 90.71%);
   background-size: 100%;
   border-bottom: 8px solid #d91965;
-  /* -webkit-background-clip: text;
-  background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent; */
 }
 
 .nav-links {
@@ -74,13 +69,13 @@ header {
 
 @keyframes logoMove {
   from {
-    padding-top: 60px;
+    padding-top: 50px;
   }
   50% {
     padding-top: 80px;
   }
   to {
-    padding-top: 60px;
+    padding-top: 50px;
   }
 }
 
@@ -88,8 +83,7 @@ header {
   width: 140px;
   animation-name: logoMove;
   animation-iteration-count: infinite;
-  /* padding-top: 80px; */
-  /* animation-direction: alternate; */
+  animation-timing-function: ease-in-out;
   animation-duration: 4s;
 }
 
@@ -113,10 +107,85 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: auto;
+  /* padding-top: 50px; */
 }
 
 footer p {
   color: #fff;
+}
+
+.game-box-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+
+.game-box-wrapper .game-box {
+  padding-top: 50px;
+  position: relative;
+  flex: 0 0 33.333333%;
+  display: flex;
+  justify-content: center;
+}
+
+.game-box-wrapper .game-box h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 7vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  z-index: 1;
+}
+
+.game-box-wrapper .game-box:hover h2 {
+  color: #3498db;
+}
+
+.game-box-wrapper .game-box a button {
+  position: absolute;
+  bottom: 7vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  z-index: 1;
+  border-color: #3498db;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  transition: all 150ms ease-in-out;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1;
+  padding: 13px 15px 10px;
+  text-transform: uppercase;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
+.game-box-wrapper .game-box a button:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.game-box-wrapper .game-box img {
+  border: 5px solid #3498db;
+  border-radius: 2%;
+  filter: brightness(0.7);
+  cursor: pointer;
+}
+
+.game-box-wrapper .game-box:hover img {
+  filter: brightness(1);
 }
 
 /* ADAPTIVE */
